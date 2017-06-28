@@ -1,0 +1,61 @@
+$grey-text-colour: #333;
+$container-colour: #ee7700;
+
+body {
+  font-family: 'Spectral', serif;
+}
+
+.outer-container {
+  padding: 1rem;
+}
+
+.container {
+  margin: 3rem auto;
+  max-width: 500px;
+  padding: 1.5rem 1rem;
+  background-color: $container-colour;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px 0 gray;
+  
+  .todo-label {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    color: $grey-text-colour;
+  }
+  
+  .todo-input {
+    margin: 1rem 0;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 30px;
+    padding-left: 1rem;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  .todo-submit {
+    display: block;
+    line-height: 40px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid black;
+    font-family: 'Spectral', serif;
+    font-weight: 600;
+    color: white;
+    background-color: $grey-text-colour;
+  }
+  
+  input {
+    
+  }
+}
+
+//Fonts to test
+// font-family: 'Spectral', serif;
+// font-family: 'Roboto Slab', serif;
+// font-family: 'Ubuntu', sans-serif;
+
+//TODOzzzzzz
+//Check CSS documentation of the label tag.
