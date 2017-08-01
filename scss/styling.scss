@@ -1,8 +1,47 @@
-$grey-text-colour: #333;
+
+$button-text-colour: #eeaa66;
+$container-border-styling: 1px solid black;
 $container-colour: #ee7700;
+$filter-row-height: 30px;
+$filter-select-height: 24px;
+$gradient-orange-1: #ee5500;
+$gradient-orange-2: #ee8800;
+$gradient-colour-bottom: $gradient-orange-1;
+$gradient-colour-middle: $gradient-orange-2;
+$gradient-colour-top: $gradient-orange-1;
+$input-border-styling: 1px solid #555;
+$label-text-colour: darken(#772222, 10%);
+$page-background-colour: #772222;
+$table-row-even-colour: #e0e0e0;
+$table-row-odd-colour: #f4f4f4;
+$todo-button-colour: #552222;
+$container-shadow: darken($page-background-colour, 15%);
+$error-message-colour: darken($todo-button-colour, 10%);
 
 body {
-  font-family: 'Spectral', serif;
+  background-color: $page-background-colour;
+  font-family: 'Ubuntu', serif;
+  font-size: 16px;
+}
+
+.header-text {
+  font-size: 3rem;
+  font-family: 'Courgette', cursive;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  background: linear-gradient( to bottom, $gradient-colour-top 25%, $gradient-colour-middle 50%, $gradient-colour-bottom 75% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media(max-width: 470px) {
+    font-size: 2rem;
+  }
+
+  @media(min-width: 820px) {
+    font-size: 4rem;
+  }
+
 }
 
 .outer-container {
@@ -15,47 +54,193 @@ body {
   padding: 1.5rem 1rem;
   background-color: $container-colour;
   border-radius: 5px;
-  border: 1px solid black;
-  box-shadow: 0 2px 4px 0 gray;
-  
-  .todo-label {
-    font-size: 18px;
+  border: $container-border-styling;
+  box-shadow: 0 2px 4px 0 $container-shadow;
+
+  @media(max-width: 570px) {
+    padding: 1.5rem 0.25rem;
+  }
+
+  .results-text {
+    font-size: 1.5rem;
     font-weight: 600;
     display: block;
-    color: $grey-text-colour;
+    text-align: center;
+    color: $label-text-colour;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+
+  .todo-label {
+    font-size: 1.1666667rem;
+    font-weight: 600;
+    display: block;
+    color: $label-text-colour;
+  }
+
+  .filter-container {
+    height: $filter-row-height;
+    
+    &:after {
+      display: table;
+      content: '';
+      clear: both;
+    }
+
+    @media(max-width: 570px) {
+      margin-bottom: 3.5rem;
+    }
   }
   
   .todo-input {
     margin: 1rem 0;
     box-sizing: border-box;
     width: 100%;
-    line-height: 30px;
+    line-height: 40px;
     padding-left: 1rem;
-    font-size: 16px;
+    border: $input-border-styling;
+    border-radius: 3px;
+    font-size: 1rem;
     font-style: italic;
+
+    @media(max-width: 570px) {
+      width: 80%;
+      margin-left: 1rem;
+    }
   }
   
   .todo-submit {
     display: block;
+    padding: 0 1em;
     line-height: 40px;
     border-radius: 5px;
     box-shadow: none;
     border: 1px solid black;
-    font-family: 'Spectral', serif;
-    font-weight: 600;
-    color: white;
-    background-color: $grey-text-colour;
-  }
+    font-size: 1.1666667rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: $button-text-colour;
+    background-color: $todo-button-colour;
   
-  input {
-    
+    @media(max-width: 570px) {
+      font-size: 0.9rem;
+      margin-left: 1rem;
+    }
   }
 }
 
-//Fonts to test
-// font-family: 'Spectral', serif;
-// font-family: 'Roboto Slab', serif;
-// font-family: 'Ubuntu', sans-serif;
+.output-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 
-//TODOzzzzzz
-//Check CSS documentation of the label tag.
+  tr {
+    height: 40px;
+    background-color: $table-row-even-colour;
+
+    &:nth-child(2n+1) {
+      background-color: $table-row-odd-colour;
+    }      
+
+    th {
+      background-color: $todo-button-colour;
+      color: $button-text-colour;
+
+      &.todo-description {
+        text-align: center;
+        width: 60%;
+
+        @media(max-width: 570px) {
+          width: 40%;
+        }
+      }
+
+      &.change-status {
+        text-align: center;
+        width: 40%;
+
+        @media(max-width: 570px) {
+          width: 60%;
+        }
+      }
+    }
+
+    td {
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.row-filter-label {
+  width: 30%;
+  float: left;
+
+  @media(max-width: 570px) {
+    width: auto;
+    float: none;
+  }
+
+  .label {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.1666667rem;
+    line-height: $filter-row-height;
+    font-weight: 600;
+    color: $label-text-colour;
+
+    @media(max-width: 570px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+.row-filter-select {
+  width: 70%;
+  float: left;
+  position: relative;
+  height: $filter-row-height;
+  
+  select {
+    width: 100%;
+    height: $filter-select-height;
+    width: 130px;
+    position: absolute;
+    top: ( $filter-row-height - $filter-select-height )/2;
+  } 
+}
+
+.results-section {
+  margin-top: 0.5rem;
+}
+
+#results-container {
+  display: none;
+  
+  &.show {
+    display: block;
+  }
+
+}
+
+.error-message {
+  display: none;
+  line-height: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $page-background-colour;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  color: white;
+
+  &.show {
+    display: block;
+
+    @media(max-width: 470px) {
+      padding-left: 0.25rem;
+    }
+  }
+}
+

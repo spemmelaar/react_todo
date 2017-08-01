@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import TodoListApp from './TodoListApp';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<TodoListApp />, document.getElementById('root'));
+
 registerServiceWorker();

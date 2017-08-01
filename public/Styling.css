@@ -1,0 +1,171 @@
+body {
+  background-color: #772222;
+  font-family: 'Ubuntu', serif;
+  font-size: 16px; }
+
+.header-text {
+  font-size: 3rem;
+  font-family: 'Courgette', cursive;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  background: linear-gradient(to bottom, #ee5500 25%, #ee8800 50%, #ee5500 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+  @media (max-width: 470px) {
+    .header-text {
+      font-size: 2rem; } }
+  @media (min-width: 820px) {
+    .header-text {
+      font-size: 4rem; } }
+
+.outer-container {
+  padding: 1rem; }
+
+.container {
+  margin: 3rem auto;
+  max-width: 500px;
+  padding: 1.5rem 1rem;
+  background-color: #ee7700;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px 0 #3c1111; }
+  @media (max-width: 570px) {
+    .container {
+      padding: 1.5rem 0.25rem; } }
+  .container .results-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    color: #4f1717;
+    margin-bottom: 1rem;
+    margin-top: 0rem; }
+  .container .todo-label {
+    font-size: 1.1666667rem;
+    font-weight: 600;
+    display: block;
+    color: #4f1717; }
+  .container .filter-container {
+    height: 30px; }
+    .container .filter-container:after {
+      display: table;
+      content: '';
+      clear: both; }
+    @media (max-width: 570px) {
+      .container .filter-container {
+        margin-bottom: 3.5rem; } }
+  .container .todo-input {
+    margin: 1rem 0;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 40px;
+    padding-left: 1rem;
+    border: 1px solid #555;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-style: italic; }
+    @media (max-width: 570px) {
+      .container .todo-input {
+        width: 80%;
+        margin-left: 1rem; } }
+  .container .todo-submit {
+    display: block;
+    padding: 0 1em;
+    line-height: 40px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid black;
+    font-size: 1.1666667rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #eeaa66;
+    background-color: #552222; }
+    @media (max-width: 570px) {
+      .container .todo-submit {
+        font-size: 0.9rem;
+        margin-left: 1rem; } }
+
+.output-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; }
+  .output-table tr {
+    height: 40px;
+    background-color: #e0e0e0; }
+    .output-table tr:nth-child(2n+1) {
+      background-color: #f4f4f4; }
+    .output-table tr th {
+      background-color: #552222;
+      color: #eeaa66; }
+      .output-table tr th.todo-description {
+        text-align: center;
+        width: 60%; }
+        @media (max-width: 570px) {
+          .output-table tr th.todo-description {
+            width: 40%; } }
+      .output-table tr th.change-status {
+        text-align: center;
+        width: 40%; }
+        @media (max-width: 570px) {
+          .output-table tr th.change-status {
+            width: 60%; } }
+    .output-table tr td {
+      padding: 0 1rem;
+      box-sizing: border-box; }
+
+.row-filter-label {
+  width: 30%;
+  float: left; }
+  @media (max-width: 570px) {
+    .row-filter-label {
+      width: auto;
+      float: none; } }
+  .row-filter-label .label {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.1666667rem;
+    line-height: 30px;
+    font-weight: 600;
+    color: #4f1717; }
+    @media (max-width: 570px) {
+      .row-filter-label .label {
+        font-size: 1rem; } }
+
+.row-filter-select {
+  width: 70%;
+  float: left;
+  position: relative;
+  height: 30px; }
+  .row-filter-select select {
+    width: 100%;
+    height: 24px;
+    width: 130px;
+    position: absolute;
+    top: 3px; }
+
+.results-section {
+  margin-top: 0.5rem; }
+
+#results-container {
+  display: none; }
+  #results-container.show {
+    display: block; }
+
+.error-message {
+  display: none;
+  line-height: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #772222;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  color: white; }
+  .error-message.show {
+    display: block; }
+    @media (max-width: 470px) {
+      .error-message.show {
+        padding-left: 0.25rem; } }
+
+/*# sourceMappingURL=Styling.css.map */
